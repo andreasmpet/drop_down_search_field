@@ -827,6 +827,7 @@ class _DropDownSearchFieldState<T> extends State<DropDownSearchField<T>> with Wi
             onTapOutside: (e) {
               if (widget.suggestionsBoxDecoration.closeSuggestionBoxWhenTapOutside) {
                 if (this._suggestionsBox?.isOpened ?? false) {
+                  this._focusNode?.unfocus();
                   this._suggestionsBox?.close();
                 }
               }
